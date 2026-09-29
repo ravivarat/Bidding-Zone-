@@ -1,0 +1,52 @@
+{% extends "header/sellerHeader.html" %} {% block body %}
+<div class="contact_section layout_padding"
+    style="background-color: whitesmoke;">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-lg-12">
+                       <h1 class="about_text" style="color: blue;">View All Bidders </h1>
+            </div>
+        </div>
+        <!-- <div class="service_section_2"> -->
+        <hr />
+        <div class="row">
+
+
+            <div class="col-md-1" align="center">
+               
+            </div>
+           <div class="col-md-10">
+          {% if products %}
+
+          <table class="table table-bordered">
+            <tr>
+              <th>Sr.No</th>
+              <th>Full Name</th>
+              <th>Email-Id</th>
+              <th>Mobile</th>
+            </tr>
+
+            {% for product  in products %}
+            
+            <tr>
+              <td>{{ loop.index }} </td>
+              <td>{{product[1]}}</td>
+              <td>{{product[2]}}</td>
+              <td>{{product[3]}}</td>
+            </tr>
+             {% endfor %}
+           </table>
+           {% endif %}
+            <div class="col-md-1" align="center">
+               
+            </div>
+            
+        </div>
+        <br />
+    </div>
+</div>
+</div>
+</div>
+
+
+{% endblock %}

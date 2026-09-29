@@ -1,0 +1,52 @@
+{% extends "mainHeader.html" %} {% block body %}
+<div class="contact_section layout_padding"
+    style="background-color: whitesmoke;">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-lg-12">
+                       <h1 class="about_text" style="color: blue;">Seller Registration</h1>
+            </div>
+        </div>
+        <hr />
+        <div class="row">
+            <div class="col-sm-12 col-lg-2"></div>
+            <div class="col-sm-12 col-lg-8" align="center">
+                <div class="card-body">
+                     <form action="/seller_reg" method="POST">
+                       <div class="form-group">
+                            <label for="username">Full Name</label> <input type="text"
+                                class="form-control" name="fname" id="fname">
+                        </div>
+                        <div class="form-group">
+                            <label for="username">Mobile Number</label> <input type="text"
+                                class="form-control" name="mobile" id="mobile">
+                        </div>
+                        <div class="form-group">
+                            <label for="username">Email-ID</label> <input type="text"
+                                class="form-control" name="email" id="email">
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password</label> <input type="password"
+                                class="form-control" name="password" id="password">
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">Registration</button>
+                    </form>
+
+
+                    <hr />
+                    <h3>
+                        Already Seller Account Click Here for <a style="color: blue;"
+                            href="sellerRegistration.html">Seller Login</a>
+                    </h3>
+                </div>
+            </div>
+            <div class="col-sm-12 col-lg-2"></div>
+        </div>
+        <br />
+    </div>
+</div>
+</div>
+</div>
+
+
+{% endblock %}

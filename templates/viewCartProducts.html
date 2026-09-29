@@ -1,0 +1,43 @@
+{% extends "header/bidderHeader.html" %} {% block body %}
+<div class="contact_section layout_padding"
+    style="background-color: whitesmoke;">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-lg-12">
+                       <h1 class="about_text" style="color: blue;">View All Products </h1>
+            </div>
+        </div>
+        <!-- <div class="service_section_2"> -->
+        <hr />
+        <div class="row">
+
+          {% if products %}
+
+
+            {% for product  in products %}
+                <div class="col-md-4">
+                    <main>
+                    <img src="../static/products/{{product[7]}}" alt="Product Name">
+                    <hr/>
+                    <h2 align="center">{{product[5]}}</h2>
+                    <p style="text-align: justify;">{{product[6]}}</p>
+                    <p>Price: {{product[8]}}</p>
+                    <p>Bidding Date: {{product[9]}} &nbsp; To &nbsp; {{product[10]}}</p>
+                    <button class="btn btn-primary btn-block"><a href="{{ url_for('bidder_remove_cart', id=product[0] )}}" style="color: white;"> Remove From Cart</a></button>
+                    <button class="btn btn-primary btn-block"><a href="{{ url_for('bidding_product', id=product[1] )}}" style="color: white;"> Bidding</a></button>
+
+                </main>
+                <hr/>
+            </div>
+             {% endfor %}
+           {% endif %}
+            
+        </div>
+        <br />
+    </div>
+</div>
+</div>
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,102 @@
+{% extends "header/bidderHeader.html" %} {% block body %}
+<div class="contact_section layout_padding"
+    style="background-color: whitesmoke;">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-lg-12">
+                       <h1 class="about_text" style="color: blue;">View All Products </h1>
+            </div>
+        </div>
+        <!-- <div class="service_section_2"> -->
+        <hr />
+        <div class="row">
+
+          {% if products %}
+
+
+            {% for product  in products %}
+                <div class="col-md-4">
+                    <main>
+                    <img src="../static/products/{{product[4]}}" alt="Product Name">
+                    <hr/>
+                    <h2 align="center">{{product[1]}}</h2>
+                    <h2 align="center">{{product[2]}}</h2>
+                    <p style="text-align: justify;">{{product[3]}}</p>
+                    <p>Price: {{product[5]}}</p>
+                    <p>Bidding Date: {{product[6]}} &nbsp; To &nbsp; {{product[7]}}</p>
+                    
+                </main>
+                <hr/>
+            </div>
+            {% endfor %}
+            <div class="col-md-4">
+                <div class="row">
+                    <div class="col-md-12">            
+                         <table style="width:80%;">
+                            <tr>
+                                <th>Curren Bidding</th>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <th>Your Last Bidding</th>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <th>New Bidding</th>
+                                <td><input type="text" placeholder="Enter Product Name" class="form-control" name="p_name" required></td>
+                            </tr>
+                            <tr>
+                                <th></th>
+                                <td> <button class="btn btn-primary btn-block"><a href="{{ url_for('bidding_product', id=product[0] )}}" style="color: white;"> Bidding</a></button></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                {% endif %}
+
+                {% if rsl_bidding_bdr %}
+            
+
+                <div class="row">
+                    <div class="col-md-12">            
+                        <table style="width:80%;">
+                            <tr>
+                                <th>Sr.No</th>
+                                <td>BidderName</td>
+                                <th>BiddingAmount</th>
+                                <th>BiddingDateTime</th>
+                                <th>Status</th>
+                            </tr>
+                                {% for bid_dtls in rsl_bidding_bdr %}
+
+                            <tr>
+                                <td>{{bid_dtls[1]}}</td>
+                                <td>{{bid_dtls[2]}}</td>
+                                <td>{{bid_dtls[4]}}</td>
+                                <td>{{bid_dtls[5]}}</td>
+                            </tr>
+                            {% endfor %}
+                          
+                        </table>
+                    </div>
+                </div>
+                {% endif %}
+
+    </div>
+
+
+           
+
+            </div>
+             
+           
+            
+        </div>
+        <br />
+    </div>
+</div>
+</div>
+</div>
+
+
+{% endblock %}

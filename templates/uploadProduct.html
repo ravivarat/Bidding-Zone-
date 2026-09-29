@@ -1,0 +1,90 @@
+{% extends "header/sellerHeader.html" %} {% block body %}
+<div class="contact_section layout_padding"
+    style="background-color: whitesmoke;">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-lg-12">
+                       <h1 class="about_text" style="color: blue;">Upload Products </h1>
+            </div>
+        </div>
+
+                {% if m1 == "sucess": %}
+                <script>
+                        alert('Product Upload Success');
+                </script>
+                {% endif %}
+                {%
+              if m1 == "failed": %}
+                <script>
+                        alert('Product Upload failed');
+                </script>
+                {% endif %} 
+        
+        <!-- <div class="service_section_2"> -->
+        <hr />
+        <div class="row">
+            <div class="col-sm-12 col-lg-12" align="center">
+                <div class="card-body">
+                   <form action="/upload_product" method="POST">
+                    <table style="width:80%;">
+                                            <tr>
+                                                <th>Category</th>
+                                                <td>
+                                                <select class="form-control" name="category">
+                                                    <option value="Mobiles">Mobiles</option>
+                                                    <option value="Laptops">Laptops</option>
+                                                    <option value="Cameras">Cameras</option>
+                                                </select>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th>Product Name</th>
+                                                <td><input type="text" placeholder="Enter Product Name" class="form-control" name="p_name" required></td>
+                                            </tr>
+                                            <tr>
+                                                <th>specification</th>
+                                                <td>
+                                                    <textarea rows="3" cols="15" class="form-control" name="specification"></textarea>
+                                                </td>
+                                            </tr>
+                                            
+                                            <tr>
+                                                <th>Base Price</th>
+                                                <td><input type="number" class="form-control" name="base_price" required></td>
+                                            </tr>
+                                            
+                                            <tr>
+                                                <th>Bidding Start Date</th>
+                                                <td><input type="date" class="form-control" name="bid_sdate_time" required></td>
+                                            </tr>
+                                            
+                                            <tr>
+                                                <th>Bidding End Date</th>
+                                                <td><input type="date" class="form-control" name="bid_ldate_time" required></td>
+                                            </tr>
+                                            
+                                            <tr>
+                                                <th>Product </th>
+                                                <td><input type="file" class="form-control" name="file_name" required></td>
+                                            </tr>
+                                            
+                                            <tr>
+                                                <th></th>
+                                                <td><button type="submit" class="btn btn-success">Upload</button></td>
+                                            </tr>
+                                        </table>
+                    </form>
+                    
+                  
+                </div>
+            </div>
+            
+        </div>
+        <br />
+    </div>
+</div>
+</div>
+</div>
+
+
+{% endblock %}

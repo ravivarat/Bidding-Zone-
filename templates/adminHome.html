@@ -1,0 +1,18 @@
+{%  extends "header/adminHeader.html" %}
+{% block body %} 
+<div class="contact_section layout_padding" style="background-color: whitesmoke;">
+    <div class="container" >
+        <h1 class="about_text" style="color:blue;">Welcome Admin</h1>
+            <hr/>
+                <div class="row">
+                    <div  class="col-sm-12 col-lg-12" align="right">
+                        <h2>Welcome: <u>{{session['email_id']}}</u></h2>     
+                    </div>
+                </div>
+                <div class="contact_section layout_padding" style="background-color: whitesmoke;"></div><div class="contact_section layout_padding" style="background-color: whitesmoke;">
+                <br/>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
